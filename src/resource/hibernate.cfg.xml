@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://192.168.0.49:3306/rs_database?useUnicode=true&amp;characterEncoding=UTF-8</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">test@123</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.min_size">2</property>
+        <property name="hibernate.c3p0.timeout">5000</property>
+        <property name="hibernate.c3p0.max_statements">100</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+        <property name="hibernate.c3p0.acquire_increment">2</property>
+        <property name="hibernate.c3p0.validate">false</property>
+        <!-- 设置指定是否需要根据hibernate 映射文件来创建数据库 -->
+        <!-- 设置是否显示sql语句 -->
+        <property name="hibernate.show_sql">false</property>
+        <!-- 设置是否格式化sql语句 -->
+        <property name="hibernate.format_sql">true</property>
+        <!-- 采用配置文件 -->
+        <mapping resource="com/yufan/pojo/TbRegion.hbm.xml"/>
+
+        <!-- 采用注解 配置持久化类 -->
+        <mapping class="com.yufan.pojo.TbRegion"/>
+    </session-factory>
+</hibernate-configuration> 

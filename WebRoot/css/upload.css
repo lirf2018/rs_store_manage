@@ -1,0 +1,74 @@
+.img_div {
+    background-color: #C0C0C0;
+    height: 100%;
+    width: 25%;
+    float: left;
+    border: 2px;
+    text-align: right;
+}
+
+.upload_div {
+    background-color: white;
+    height: 380px;
+    position: relative;
+}
+
+.img_file_size {
+    width: 96%;
+    height: 96%;
+    margin: 2px 2px 2px 2px;
+    padding: 1px 1px 1px 1px;
+    background-color: white;
+    border: 3px solid white;
+}
+
+/* 主图 */
+.img_div_ {
+    background-color: #C0C0C0;
+    height: 160px;
+    width: 163px;
+    text-align: right;
+    padding-top: 1px;
+    padding-bottom: 1.5px;
+}
+
+.upload_div_ {
+    background-color: white;
+    height: 100%;
+    position: relative;
+}
+
+.img_file_size_ {
+    height: 150px;
+    width: 150px;
+    margin: 2px 2px 2px 2px;
+    padding: 1px 1px 1px 1px;
+    background-color: white;
+    border: 3px solid white;
+}
+
+/* 店铺 */
+.simg_div_ {
+    background-color: #C0C0C0;
+    height: 102px;
+    width: 102px;
+    text-align: right;
+    padding-top: 1px;
+    padding-bottom: 1.5px;
+}
+
+.supload_div_ {
+    background-color: white;
+    height: 100%;
+    position: relative;
+}
+
+.simg_file_size_ {
+    height: 90px;
+    width: 90px;
+    margin: 2px 2px 2px 2px;
+    padding: 1px 1px 1px 1px;
+    background-color: white;
+    border: 3px solid white;
+}
+

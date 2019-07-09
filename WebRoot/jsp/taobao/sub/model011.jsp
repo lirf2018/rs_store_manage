@@ -1,0 +1,547 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8" contentType="text/html; charset=utf-8" %>
+<%@ include file="../../util/taglibs.jsp" %>
+<%@ include file="../../util/meta.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>增加</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="${path}/assets/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="${path}/assets/css/bootstrap-responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="${path}/assets/css/style.css"/>
+    <script type="text/javascript" src="${path}/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="${path}/assets/js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="${path}/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="${path}/assets/js/ckform.js"></script>
+    <script type="text/javascript" src="${path}/assets/js/common.js"></script>
+
+    <script type="text/javascript" src="${path}/js/DatePicker/WdatePicker.js"></script>
+
+    <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+
+        #left {
+            width: 40%;
+            height: 100%;
+            float: left;
+        }
+
+        #right {
+            width: 60%;
+            height: 100%;
+            float: right;
+        }
+    </style>
+    <style type="text/css">
+        #preview {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+
+        #imghead {
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+        }
+    </style>
+</head>
+<body>
+<form action="" method="post" class="definewidth m20" id="form_submit">
+    <input type="hidden" value="${handleType }" name="handleType">
+    <input type="hidden" value="${bean.id }" name="bean.id">
+    <input type="hidden" value="${id }" name="id">
+    <input type="hidden" name="bean.sort" value="${bean.sort }"/>
+    <input type="hidden" name="bean.pageName" value="${bean.pageName}"/>
+    <input type="hidden" name="bean.toPage" value="${bean.toPage}"/>
+    <input type="hidden" name="bean.remark" value="${bean.remark}"/>
+    <input type="hidden" name="bean.imgNum" value="${bean.imgNum}"/>
+    <!-- <input type="hidden" name="bean.BContents" value="${bean.BContents}"/> -->
+    <input type="hidden" name="fromPage" value="sub"/>
+    <div id="left">
+        <table class="table table-bordered table-hover definewidth m10">
+            <thead>
+            <tr>
+                <th>商品${bean.pageName }图片示例</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><img id="img" src="${photoPath }" width="100%" height="400px"></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table-hover definewidth m10">
+            <thead>
+            <tr>
+                <th>结果源码</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><textarea style="resize: none;width: 100%;" rows="15" readonly="readonly"
+                              id="aContents">${bean.AContents }</textarea></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table-hover definewidth m10">
+            <thead>
+            <tr>
+                <th>商品${bean.pageName }图片示例</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><img id="img" src="${photoPath }" width="100%" height="400px"></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table-hover definewidth m10">
+            <thead>
+            <tr>
+                <th>结果源码</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><textarea style="resize: none;width: 100%;" rows="15" readonly="readonly"
+                              id="aContents">${bean.AContents }</textarea></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table-hover definewidth m10">
+            <thead>
+            <tr>
+                <th>商品${bean.pageName }图片示例</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><img id="img" src="${photoPath }" width="100%" height="400px"></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table-hover definewidth m10">
+            <thead>
+            <tr>
+                <th>结果源码</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><textarea style="resize: none;width: 100%;" rows="15" readonly="readonly"
+                              id="aContents">${bean.AContents }</textarea></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table-hover definewidth m10">
+            <thead>
+            <tr>
+                <th>商品${bean.pageName }图片示例</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><img id="img" src="${photoPath }" width="100%" height="400px"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="right">
+        <table class="table table-bordered table-hover m10">
+            <tr>
+                <td style="text-align:center;vertical-align:middle;">
+                    <button onclick="submitForm()" class="btn btn-primary" type="button">生成数据并保存</button> &nbsp;&nbsp;<button
+                        type="button" class="btn btn-success" name="backid" id="backid" onclick="returnBack()">返回列表
+                </button>
+                </td>
+            </tr>
+        </table>
+        <table class="table table-bordered table-hover definewidth m10">
+            <thead>
+            <tr>
+                <th>设置名称</th>
+                <th>替换值</th>
+                <th>关联字段</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td align="right">热卖推荐</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value01}" name="bean.value01"></td>
+                <td>value01</td>
+            </tr>
+            <tr>
+                <td align="right">Fashion Icewine</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value02}" name="bean.value02"></td>
+                <td>value02</td>
+            </tr>
+            <tr>
+                <td align="right">查看更多</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value03}" name="bean.value03"></td>
+                <td>value03</td>
+            </tr>
+            <tr>
+                <td align="right">查看更多跳转链接</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value04}" name="bean.value04"></td>
+                <td>value04</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color: #9393FF;height: 2px;"></td>
+            </tr>
+            <tr>
+                <td align="right">商品图片1大图(460*460像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value05}" name="bean.value05"></td>
+                <td>value05</td>
+            </tr>
+            <tr>
+                <td align="right">商品图片1小图(100*100像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value06}" name="bean.value06"></td>
+                <td>value06</td>
+            </tr>
+            <tr>
+                <td align="right">商品跳转链接</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value07}" name="bean.value07"></td>
+                <td>value07</td>
+            </tr>
+            <tr>
+                <td align="right">惊爆价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value08}" name="bean.value08"></td>
+                <td>value08</td>
+            </tr>
+            <tr>
+                <td align="right">原价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value09}" name="bean.value09"></td>
+                <td>value09</td>
+            </tr>
+            <tr>
+                <td align="right">折扣</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value10}" name="bean.value10"></td>
+                <td>value10</td>
+            </tr>
+            <tr>
+                <td align="right">节省</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value11}" name="bean.value11"></td>
+                <td>value11</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color: #9393FF;height: 2px;"></td>
+            </tr>
+            <tr>
+                <td align="right">商品图片2大图(460*460像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value12}" name="bean.value12"></td>
+                <td>value12</td>
+            </tr>
+            <tr>
+                <td align="right">商品图片2小图(100*100像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value13}" name="bean.value13"></td>
+                <td>value13</td>
+            </tr>
+            <tr>
+                <td align="right">商品跳转链接</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value14}" name="bean.value14"></td>
+                <td>value14</td>
+            </tr>
+            <tr>
+                <td align="right">惊爆价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value15}" name="bean.value15"></td>
+                <td>value15</td>
+            </tr>
+            <tr>
+                <td align="right">原价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value16}" name="bean.value16"></td>
+                <td>value16</td>
+            </tr>
+            <tr>
+                <td align="right">折扣</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value17}" name="bean.value17"></td>
+                <td>value17</td>
+            </tr>
+            <tr>
+                <td align="right">节省</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value18}" name="bean.value18"></td>
+                <td>value18</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color: #9393FF;height: 2px;"></td>
+            </tr>
+            <tr>
+                <td align="right">商品图片3大图(460*460像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value19}" name="bean.value19"></td>
+                <td>value19</td>
+            </tr>
+            <tr>
+                <td align="right">商品图片3小图(100*100像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value20}" name="bean.value20"></td>
+                <td>value20</td>
+            </tr>
+            <tr>
+                <td align="right">商品跳转链接</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value21}" name="bean.value21"></td>
+                <td>value21</td>
+            </tr>
+            <tr>
+                <td align="right">惊爆价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value22}" name="bean.value22"></td>
+                <td>value22</td>
+            </tr>
+            <tr>
+                <td align="right">原价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value23}" name="bean.value23"></td>
+                <td>value23</td>
+            </tr>
+            <tr>
+                <td align="right">折扣</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value24}" name="bean.value24"></td>
+                <td>value24</td>
+            </tr>
+            <tr>
+                <td align="right">节省</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value25}" name="bean.value25"></td>
+                <td>value25</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color: #9393FF;height: 2px;"></td>
+            </tr>
+            <tr>
+                <td align="right">商品图片4大图(460*460像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value26}" name="bean.value26"></td>
+                <td>value26</td>
+            </tr>
+            <tr>
+                <td align="right">商品图片4小图(100*100像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value27}" name="bean.value27"></td>
+                <td>value27</td>
+            </tr>
+            <tr>
+                <td align="right">商品跳转链接</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value28}" name="bean.value28"></td>
+                <td>value28</td>
+            </tr>
+            <tr>
+                <td align="right">惊爆价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value29}" name="bean.value29"></td>
+                <td>value29</td>
+            </tr>
+            <tr>
+                <td align="right">原价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value30}" name="bean.value30"></td>
+                <td>value30</td>
+            </tr>
+            <tr>
+                <td align="right">折扣</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value31}" name="bean.value31"></td>
+                <td>value31</td>
+            </tr>
+            <tr>
+                <td align="right">节省</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value32}" name="bean.value32"></td>
+                <td>value32</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color: #9393FF;height: 2px;"></td>
+            </tr>
+            <tr>
+                <td align="right">商品图片5大图(460*460像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value33}" name="bean.value33"></td>
+                <td>value33</td>
+            </tr>
+            <tr>
+                <td align="right">商品图片5小图(100*100像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value34}" name="bean.value34"></td>
+                <td>value34</td>
+            </tr>
+            <tr>
+                <td align="right">商品跳转链接</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value35}" name="bean.value35"></td>
+                <td>value35</td>
+            </tr>
+            <tr>
+                <td align="right">惊爆价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value36}" name="bean.value36"></td>
+                <td>value36</td>
+            </tr>
+            <tr>
+                <td align="right">原价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value37}" name="bean.value37"></td>
+                <td>value37</td>
+            </tr>
+            <tr>
+                <td align="right">折扣</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value38}" name="bean.value38"></td>
+                <td>value38</td>
+            </tr>
+            <tr>
+                <td align="right">节省</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value39}" name="bean.value39"></td>
+                <td>value39</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color: #9393FF;height: 2px;"></td>
+            </tr>
+            <tr>
+                <td align="right">商品图片6大图(460*460像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value40}" name="bean.value40"></td>
+                <td>value40</td>
+            </tr>
+            <tr>
+                <td align="right">商品图片6小图(100*100像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value41}" name="bean.value41"></td>
+                <td>value41</td>
+            </tr>
+            <tr>
+                <td align="right">商品跳转链接</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value42}" name="bean.value42"></td>
+                <td>value42</td>
+            </tr>
+            <tr>
+                <td align="right">惊爆价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value43}" name="bean.value43"></td>
+                <td>value43</td>
+            </tr>
+            <tr>
+                <td align="right">原价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value44}" name="bean.value44"></td>
+                <td>value44</td>
+            </tr>
+            <tr>
+                <td align="right">折扣</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value45}" name="bean.value45"></td>
+                <td>value45</td>
+            </tr>
+            <tr>
+                <td align="right">节省</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value46}" name="bean.value46"></td>
+                <td>value46</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color: #9393FF;height: 2px;"></td>
+            </tr>
+            <tr>
+                <td align="right">商品图片7大图(460*460像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value47}" name="bean.value47"></td>
+                <td>value47</td>
+            </tr>
+            <tr>
+                <td align="right">商品图片7小图(100*100像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value48}" name="bean.value48"></td>
+                <td>value48</td>
+            </tr>
+            <tr>
+                <td align="right">商品跳转链接</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value49}" name="bean.value49"></td>
+                <td>value49</td>
+            </tr>
+            <tr>
+                <td align="right">惊爆价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value50}" name="bean.value50"></td>
+                <td>value50</td>
+            </tr>
+            <tr>
+                <td align="right">原价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value51}" name="bean.value51"></td>
+                <td>value51</td>
+            </tr>
+            <tr>
+                <td align="right">折扣</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value52}" name="bean.value52"></td>
+                <td>value52</td>
+            </tr>
+            <tr>
+                <td align="right">节省</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value53}" name="bean.value53"></td>
+                <td>value53</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color: #9393FF;height: 2px;"></td>
+            </tr>
+            <tr>
+                <td align="right">商品图片8大图(460*460像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value54}" name="bean.value54"></td>
+                <td>value54</td>
+            </tr>
+            <tr>
+                <td align="right">商品图片8小图(100*100像素)</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value55}" name="bean.value55"></td>
+                <td>value55</td>
+            </tr>
+            <tr>
+                <td align="right">商品跳转链接</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value56}" name="bean.value56"></td>
+                <td>value56</td>
+            </tr>
+            <tr>
+                <td align="right">惊爆价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value57}" name="bean.value57"></td>
+                <td>value57</td>
+            </tr>
+            <tr>
+                <td align="right">原价</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value58}" name="bean.value58"></td>
+                <td>value58</td>
+            </tr>
+            <tr>
+                <td align="right">折扣</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value59}" name="bean.value59"></td>
+                <td>value59</td>
+            </tr>
+            <tr>
+                <td align="right">节省</td>
+                <td><input type="text" style="width: 100%;" value="${bean.value60}" name="bean.value60"></td>
+                <td>value60</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+</body>
+</html>
+<script>
+
+    //提交表单
+    function submitForm() {
+        $.ajax({
+            url: "${path}/taobao/saveOrUpdate.action",
+            type: 'POST',
+            data: $('#form_submit').serialize(),
+            dataType: 'JSON',
+            async: false,
+            cache: false,
+        }).done(function (ret) {
+            var flag = ret.flag;
+            if (flag === "ok") {
+                alert(ret.msg);
+                window.location.href = "${path}/jsp/taobao/list_model.jsp";
+            } else if (flag === "false") {
+                alert(ret.msg);
+            } else {
+                alert("操作失败");
+            }
+        });
+    }
+
+    //返回列表
+    function returnBack() {
+        window.location.href = "${path}/jsp/taobao/list_model.jsp";
+    }
+
+
+    var result = $("#aContents").val();
+    result = result.replace(/_##/g, "&");
+    result = result.replace(/_#/g, ";");
+    $("#aContents").val(result);
+</script>

@@ -1,0 +1,647 @@
+@charset "utf-8";
+/* CSS Document */
+/*!
+ * =====================================================
+ * CY v1.0.0 (Email:g1079832313@163.com)
+ * =====================================================
+ */
+
+/*! bass.css v1.0.0 | gjb */
+@charset "utf-8";
+/*1 重定义浏览器默认样式*/
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    font-size: 62.5%;
+    width: 100%;
+    height: 100%
+}
+
+body {
+    width: 100%;
+    /*max-width: 750px;
+    min-width: 320px;*/
+    min-height: 100%;
+    margin: 0px auto;
+    color: #333333;
+    font-size: 12px;
+    font-size: 1.2rem;
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+
+}
+
+.clearx {
+    clear: both
+}
+
+ul, ol, dl {
+    list-style-type: none
+}
+
+body, th, td, button, input, select, textarea {
+    font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, Verdana, sans-serif, "WenQuanYi Micro Hei", "\5B8B\4F53";
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased
+}
+
+input, select, textarea {
+    color: #555;
+    background-color: #fff;
+    border: solid 1px #ddd;
+}
+
+/*img*/
+img {
+    width: 100%
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+a img, img {
+    -ms-interpolation-mode: bicubic
+}
+
+a {
+    text-decoration: none
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto
+}
+
+.return_btn {
+    display: block;
+    width: 15px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    background: url(../images/icon_1.png) no-repeat center;
+    background-size: 25px auto
+}
+
+.sel_btn {
+    display: block;
+    width: 27px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    background: url(../images/order/sel_btn.png) no-repeat center;
+    background-size: 27px auto
+}
+
+.dropD {
+    display: block;
+    width: 25px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background: url(../images/more_btn.png) no-repeat center
+}
+
+.dropdiv {
+    display: none;
+    position: absolute;
+    right: 5%;
+    padding: 11px 10px;
+    background: url(../images/bg.png);
+}
+
+span.flag {
+    display: block;
+    position: absolute;
+    top: -16px;
+    width: 10px;
+    height: 9px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border: solid 8px;
+    border-color: #fff #fff #000 #fff;
+    opacity: 0.7
+}
+
+.dropdiv a {
+    height: 3rem;
+    line-height: 3rem;
+    color: #fff;
+    font-size: 1.4rem;
+    display: block;
+    border-bottom: 1px solid #583b3f;
+    text-align: left;
+    padding-left: 30px;
+    background: url(../images/merchandise/icons.png) no-repeat
+}
+
+.dropdiv a.hicon1 {
+    background: url(../images/icon_5.png) no-repeat left center
+}
+
+.dropdiv a.hicon2 {
+    background: url(../images/icon_6.png) no-repeat left center
+}
+
+.dropdiv a.hicon3 {
+    background: url(../images/icon_7.png) no-repeat left center
+}
+
+.dropdiv a.hicon4 {
+    background: url(../images/icon_8.png) no-repeat left center
+}
+
+/*选项卡*/
+.fixedbox {
+    position: fixed;
+    width: 100%;
+    top: 5rem;
+    left: 0;
+    z-index: 100;
+    margin-top: 0;
+    box-shadow: 0 2px 3px #ccc
+}
+
+.favor-header-bar {
+    width: 100%;
+    background: #fff
+}
+
+.favor-header-bar li {
+    width: 20%;
+    float: left;
+    text-align: center;
+    height: 4rem;
+    line-height: 4rem
+}
+
+.favor-header-bar li a {
+    color: #0f0f0f;
+    font-size: 1.4rem;
+    padding-bottom: 0.2rem
+}
+
+.favor-header-bar li.default a {
+    color: #fa1545;
+}
+
+.favor-header-bar li span {
+    position: absolute;
+    display: block;
+    width: 25%;
+    top: -0.4rem;
+    right: 0.2rem;
+    max-width: 32px;
+}
+
+.orderlist {
+    width: 100%;
+}
+
+.orderlist article {
+    position: relative;
+    padding: 10px;
+    margin-top: 8px;
+    background: #fff;
+}
+
+.orderlist article > b {
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: #000;
+    display: block;
+    width: 60%;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 30px;
+    background: url(../images/order/icon_shop.png) left center no-repeat;
+    background-size: 20px 20px;
+    position: relative;
+    float: left
+}
+
+.orderlist article > b a {
+    display: inline-block;
+    max-width: 90%;
+    overflow: hidden;
+    height: 25px;
+}
+
+.orderlist article > b i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/order/icon_into.png) no-repeat center right;
+    background-size: 30px auto;
+    position: absolute;
+    top: 2px
+}
+
+.orderlist article > em.flag {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    font-style: normal;
+    color: #fa1d4a
+}
+
+.Orgoods {
+    display: block;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #D1D1D1
+}
+
+.Orgoods:last-child {
+    border: none
+}
+
+.Orgoods > a {
+    display: inline-block;
+    width: 25%;
+    float: left
+}
+
+.Orgoods > span.message {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    padding-left: 5px
+}
+
+.Orgoods > span.message a {
+    display: block;
+    font-size: 1.3rem;
+    width: 90%;
+    color: #000;
+    line-height: 1.5rem;
+    height: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.Orgoods > span.message i {
+    display: block;
+    font-size: 1.2rem;
+    color: #666;
+    font-style: normal;
+    margin-top: 0.6rem
+}
+
+.Orgoods > span.price {
+    display: inline-block;
+    width: 22%;
+    float: right;
+    text-align: right
+}
+
+.Orgoods > span.price b {
+    font-weight: normal;
+    font-size: 1.3rem;
+    color: #000;
+}
+
+i.pr {
+    font-style: normal;
+    font-size: 1rem
+}
+
+.Orgoods > span.price em {
+    font-size: 1.2rem;
+    color: #999;
+    font-style: normal;
+    display: block;
+    margin-top: 1.9rem
+}
+
+a.big {
+    font-size: 1.4rem
+}
+
+a.linebtn {
+    color: #fa1d4a;
+    font-size: 1.2rem;
+    border: 1px solid #fa1d4a;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 0.3rem 1rem
+}
+
+a.linebtn.gray {
+    border-color: #666;
+    color: #666
+}
+
+a.linebtn:active {
+    background: #fa1d4a;
+    color: #fff;
+    border-color: #fa1d4a
+}
+
+.orderlist article.total {
+    text-align: right
+}
+
+/*订单详情*/
+.ordermessage {
+    background: #fff;
+    margin-bottom: 8px
+}
+
+.ordermessage > p {
+    line-height: 50px;
+    height: 50px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.4rem;
+    padding: 0 10px
+}
+
+.ordermessage > a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.2rem;
+    color: #929292;
+    padding-left: 40px;
+    background: url(../images/order/wuliu.png) no-repeat left center;
+    background-size: 30px auto;
+    position: relative;
+    margin-left: 10px;
+}
+
+.ordermessage > a b {
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: normal;
+    padding-right: 10px
+}
+
+.ordermessage > a i {
+    display: block;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background-size: 30px auto
+}
+
+.shouh {
+    display: block;
+    padding: 10px 0;
+    padding-left: 40px;
+    background: url(../img/icon/dizhi.png) no-repeat left center;
+    background-size: 30px auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative
+}
+
+.shouh p:after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 12px;
+    background: url(../images/order/icon_into.png) no-repeat center;
+    background-size: 30px auto;
+    position: absolute;
+    right: 0;
+    top: center;
+    margin-top: 15px;
+}
+
+.shouh p.confirm {
+    width: 90%;
+    line-height: 18px;
+    margin-top: 15px;
+}
+
+.shouh dd {
+    float: left
+}
+
+.shouh dt {
+    float: right
+}
+
+.Orgoods.or1 {
+    position: relative
+}
+
+.price > p {
+    text-align: right;
+    margin-top: 10px
+}
+
+.price > p a.linebtn {
+    padding: 2px 8px
+}
+
+.orderlist article .Or_more {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    position: relative
+}
+
+.orderlist article .Or_more b {
+    font-weight: normal;
+    color: #6d6d6d;
+    font-size: 1.3rem;
+    position: relative
+}
+
+.orderlist article .Or_more b:after {
+    content: '';
+    margin-left: 10px;
+    display: inline-block;
+    height: 11px;
+    width: 20px;
+    background: url(../images/order/i_more.png) no-repeat center;
+    background-size: 20px auto;
+}
+
+.orderlist article dl dd {
+    width: 50%;
+    float: left
+}
+
+.orderlist article dl dt {
+    width: 50%;
+    float: right
+}
+
+.orderlist article dl dd p, .orderlist article dl dt p {
+    font-size: 1.3rem;
+    color: #6d6d6d;
+}
+
+.orderlist article dl dd p a {
+    font-size: 1.6rem
+}
+
+.orderlist article dl dt p {
+    text-align: right;
+    color: #000;
+}
+
+.orderlist article dl dt p.red {
+    color: #fa1d4a;
+    font-size: 1.6rem
+}
+
+.orderlist article dl > p {
+    text-align: right;
+    color: #000;
+    line-height: 30px
+}
+
+.orderlist article.line {
+    border-bottom: 1px solid #eee;
+}
+
+.orderlist article > h3 {
+    font-size: 1.4rem;
+    color: #6d6d6d;
+    font-weight: normal;
+    display: block;
+    position: relative
+}
+
+.orderlist article > h3 a {
+    font-family: 1.4rem;
+    color: #000;
+    position: absolute;
+    top: 0;
+    right: 0
+}
+
+.orderlist article > p {
+    font-size: 1.3rem;
+    color: #6d6d6d;
+}
+
+.orderlist article > p.btn {
+    padding: 10px 0;
+    text-align: right
+}
+
+/*确认订单*/
+.colorline {
+    height: 3px;
+    width: 100%;
+    background-image: linear-gradient(to right, #f96c2c, #f41b58);
+    background-image: -webkit-linear-gradient(to right, #f96c2c, #f41b58);
+}
+
+.orderlist article.nopadding, .nopadding {
+    margin: 0
+}
+
+.orderlist article.pay_way {
+    padding: 0;
+}
+
+.orderlist article.pay_way a {
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    font-size: 1.4rem;
+    color: #6d6d6d;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    padding: 0 10px
+}
+
+.orderlist article.pay_way a b {
+    font-weight: normal;
+    color: #000;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    position: absolute;
+    top: 0;
+    right: 30px;
+}
+
+.orderlist article.pay_way a i {
+    display: inline-block;
+    width: 20px;
+    height: 36px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(../images/order/icon_into.png) no-repeat center;
+    background-size: 30px auto
+}
+
+.orderlist article.pay_way > span {
+    display: block;
+    background: #fff;
+    padding: 10px
+}
+
+.orderlist article.pay_way span span {
+    display: inline-block;
+    line-height: 18px;
+    float: right;
+    margin-left: 10px
+}
+
+.orderlist article.pay_way span span i, footer p i {
+    font-style: normal;
+    font-size: 1rem;
+    color: #fb1949
+}
+
+.orderlist article.pay_way span span b, footer p b {
+    font-weight: normal;
+    color: #fb1949;
+    font-size: 1.6rem
+}
+
+footer {
+    height: 5rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -1px 3px #B9B9B9;
+    z-index: 100;
+    background: #fff
+}
+
+footer p {
+    line-height: 5rem;
+    text-align: right
+}
+
+footer p a {
+    padding: 0 20px;
+    margin-left: 10px
+}
+
+.btn_color {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.5rem;
+    background-image: linear-gradient(to right, #f96c2c, #f41b58);
+    background-image: -webkit-linear-gradient(to right, #f96c2c, #f41b58);
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+
+}
